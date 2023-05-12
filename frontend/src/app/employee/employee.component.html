@@ -1,0 +1,72 @@
+<div class="wrapper">
+    <div class="container-fluid card mt-5">
+        <div class="row card-body">
+            <div class="col-md-12">
+                <div class="row mt-3 ">
+                    <div class="col-sm-6">
+                        <h2 class="pull-left"><span *ngIf="!isUpdate">Update</span><span *ngIf="isUpdate">Create</span> Employee</h2>
+                    </div>
+                    <div class="col-sm-6 text-end">
+                        <a class="btn btn-success pull-right" routerLink="/">Back</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="row mt-3">
+                        <div class="form-group">
+                            <label for="inputEmail4">Employee Name</label>
+                            <input type="text" class="form-control" id="inputEmail4" [(ngModel)]="name" placeholder="Employee Name">
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Address" [(ngModel)]="address">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="inputAddress2">Email</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Email" [(ngModel)]="email">
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Date of Birth</label>
+                            <input type="date" class="form-control" id="inputCity" [(ngModel)]="DOB">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="mt-4">Gender</label>
+                            <div class="form-check form-check-inline" style="padding-left: 40px;">
+                                <input class="form-check-input" type="radio" id="inlineRadio1" value="male" [(ngModel)]="gender">
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="inlineRadio2" value="female" [(ngModel)]="gender">
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Date of joining</label>
+                            <input type="date" class="form-control" id="inputCity" [(ngModel)]="doj">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="exampleFormControlSelect1">Martial status</label>
+                            <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="martialStatus">
+                                <option value="">Select martial status</option>
+                                <option value="married">Married</option>
+                                <option value="single">Single</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="widowed">Widowed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="inputAddress2">Contact No</label>
+                        <input type="number" class="form-control"  id="inputAddress2"  onKeyPress="if(this.value.length==13) return false;" placeholder="example: +911000000000" [(ngModel)]="phone">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-3" (click)="addEmployee()" *ngIf="isUpdate">Add Employee</button>
+                    <button type="submit" class="btn btn-primary mt-3" (click)="updateEmployee()" *ngIf="!isUpdate">Update Employee</button>
+                </div>
+            </div>
+        </div>
+    </div>

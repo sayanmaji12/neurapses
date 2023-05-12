@@ -1,2 +1,3 @@
-neurapses/backend/node_modules
-neurapses/frontend/node_modules
+neurapses/backend/node_modules/
+neurapses/frontend/node_modules/
+neurapses/frontend/.angular/
